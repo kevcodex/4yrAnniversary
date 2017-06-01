@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A6E-e1-0uS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -451,16 +451,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="frN-zp-Pbe">
-                                <rect key="frame" x="16" y="28" width="343" height="527"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frN-zp-Pbe">
+                                <rect key="frame" x="16" y="66" width="343" height="442"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Before There Was You  When I used to look above, all I saw was sky; and every song that I would sing, I sung not knowing why.  All I thought and all I felt, was only just because, never was it you -  until it was all there was  - Lang Leav</string>
+                                        <attributes>
+                                            <color key="NSColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="23" name=".SFNSDisplay"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="frN-zp-Pbe" firstAttribute="leading" secondItem="jgv-HU-sT3" secondAttribute="leadingMargin" id="J4e-Fr-ue4"/>
+                            <constraint firstItem="frN-zp-Pbe" firstAttribute="trailing" secondItem="jgv-HU-sT3" secondAttribute="trailingMargin" id="SVO-Cm-aG1"/>
+                            <constraint firstItem="frN-zp-Pbe" firstAttribute="top" secondItem="haL-Qg-Yog" secondAttribute="bottom" constant="46" id="cwT-Nw-Hta"/>
+                            <constraint firstItem="qcT-jV-DLf" firstAttribute="top" secondItem="frN-zp-Pbe" secondAttribute="bottom" constant="110" id="xMq-LE-omd"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -602,7 +614,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4GV-ol-oKV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Itinerary" id="ji7-kn-YVY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rDD-ho-HB1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rDD-ho-HB1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

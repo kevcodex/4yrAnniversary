@@ -31,7 +31,8 @@ class ItineraryViewController: UIViewController {
     tableView.delegate = self
     // Do any additional setup after loading the view.
   }
-    
+  
+
 }
 
 //MARK: - table view data source
@@ -60,7 +61,10 @@ extension ItineraryViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    
   }
+  
+
 }
 
 //MARK: - Segue
