@@ -68,9 +68,9 @@ extension TabBarViewController {
     let photo7 = "cake"
     let photo8 =  "present"
     //1496592000
-    //1496574000
+    //1496599200
     _ = Event(context: store.context, name: "Wake Up!", photoName: photo1, time: 1496592000, rating: 0, order: 0)
-    _ = Event(context: store.context, name: "Go To Park", photoName: photo2, time: 1496574000, rating: 0, order: 1)
+    _ = Event(context: store.context, name: "Go To Park", photoName: photo2, time: 1496599200, rating: 0, order: 1)
     _ = Event(context: store.context, name: "Picnic", photoName: photo3, time: 1496602800, rating: 0, order: 2)
     _ = Event(context: store.context, name: "Fly Kite", photoName: photo4, time: 1496606400, rating: 0, order: 3)
     _ = Event(context: store.context, name: "B&B", photoName: photo5, time: 1496616300, rating: 0, order: 4)

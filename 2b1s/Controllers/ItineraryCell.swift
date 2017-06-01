@@ -14,22 +14,7 @@ class ItineraryCell: UITableViewCell {
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var sampleImage: BubbleView!
   
-  var event: Event! {
-    didSet {
-      titleLabel.text = event.name
-      sampleImage.image = UIImage(named: event.photoName)
-      
-      let eventDate = Date(timeIntervalSince1970: event.time)
-      
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "MMM d, h:mm a"
-      dateFormatter.amSymbol = "AM"
-      dateFormatter.pmSymbol = "PM"
-      
-      let eventString = dateFormatter.string(from: eventDate)
-      timeLabel.text = eventString
-    }
-  }
+  var event: Event?
   
   override func awakeFromNib() {
     super.awakeFromNib()

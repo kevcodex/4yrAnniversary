@@ -32,7 +32,13 @@ class ItineraryViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
   
-
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    print("APPEAR")
+    tableView.reloadData()
+  }
+  
 }
 
 //MARK: - table view data source
@@ -52,7 +58,29 @@ extension ItineraryViewController: UITableViewDataSource, UITableViewDelegate {
     
     let event = rootController.eventFetchedResultsController.object(at: indexPath)
     
-    cell.event = event
+    //1496617200
+    if event.time < Date().timeIntervalSince1970 || indexPath.row == 0 {
+      
+      cell.event = event
+      cell.titleLabel.text = event.name
+      cell.sampleImage.image = UIImage(named: event.photoName)
+    } else {
+      cell.titleLabel.text = "???????"
+      cell.sampleImage.image = UIImage.fontAwesomeIcon(name: .questionCircle, textColor: .gray, size: cell.sampleImage.bounds.size)
+      cell.event = nil
+    }
+    
+    
+    let eventDate = Date(timeIntervalSince1970: event.time)
+    
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "MMM d, h:mm a"
+    dateFormatter.amSymbol = "AM"
+    dateFormatter.pmSymbol = "PM"
+    
+    let eventString = dateFormatter.string(from: eventDate)
+    cell.timeLabel.text = eventString
+    
     
     return cell
   }
@@ -62,9 +90,21 @@ extension ItineraryViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     
+    
+    let cell = tableView.cellForRow(at: indexPath) as! ItineraryCell
+    
+    if cell.event != nil {
+      
+      performSegue(withIdentifier: "showDetails", sender: cell)
+    } else {
+      
+      showAlert()
+    }
+    
+    
   }
   
-
+  
 }
 
 //MARK: - Segue
@@ -84,6 +124,25 @@ extension ItineraryViewController {
     let event = rootController.eventFetchedResultsController.object(at: indexPath)
     itineraryDetailsViewController.event = event
     
+  }
+}
+
+
+//MARK: - Alerts
+
+extension ItineraryViewController {
+  func showAlert() {
+    
+    
+    let alert = UIAlertController(title: "Hold it!", message: "Don't skip ahead, wait to be suprised!", preferredStyle: .alert)
+    let action = UIAlertAction(title: "OK", style: .default) { _ in
+      
+      
+    }
+    
+    alert.addAction(action)
+    
+    present(alert, animated: true)
   }
 }
 
