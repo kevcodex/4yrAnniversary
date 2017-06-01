@@ -250,6 +250,7 @@
 				4E26D27A1EDC88800078F76C /* Resources */,
 				1ECB8A628EC1C19DF7A88E47 /* [CP] Embed Pods Frameworks */,
 				750C1D49E063BB12E62FA257 /* [CP] Copy Pods Resources */,
+				4EEB37831EE0C40F00CFE936 /* Swift Format */,
 			);
 			buildRules = (
 			);
@@ -370,6 +371,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2b1s/Pods-2b1s-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4EEB37831EE0C40F00CFE936 /* Swift Format */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Format";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/swiftFormat\" --indent 2 --disable unusedArguments \"${SRCROOT}/2b1s\"";
 		};
 		750C1D49E063BB12E62FA257 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

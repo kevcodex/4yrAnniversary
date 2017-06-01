@@ -10,18 +10,16 @@ import UIKit
 import FontAwesome_swift
 
 class LetterViewController: UIViewController {
-  
+
   override func awakeFromNib() {
     super.awakeFromNib()
-    
+
     tabBarItem.image = UIImage.fontAwesomeIcon(name: .envelope, textColor: .black, size: CGSize(width: 40, height: 40))
   }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-
+    // Do any additional setup after loading the view.
+  }
 }

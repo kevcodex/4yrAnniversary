@@ -9,13 +9,13 @@
 import UIKit
 
 class ItineraryCell: UITableViewCell {
-  
+
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var sampleImage: BubbleView!
-  
+
   var event: Event?
-  
+
   override func awakeFromNib() {
     super.awakeFromNib()
     backgroundColor = .clear
