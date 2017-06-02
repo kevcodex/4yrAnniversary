@@ -29,4 +29,12 @@ extension Event {
   @NSManaged public var time: Double
   @NSManaged public var rating: Int16
   @NSManaged public var order: Int16
+
+  var image: UIImage? {
+
+    guard let image = UIImage(named: photoName) else {
+      return nil
+    }
+    return image
+  }
 }

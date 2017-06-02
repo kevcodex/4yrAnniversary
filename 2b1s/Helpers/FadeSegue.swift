@@ -23,7 +23,7 @@ class FadeSegue: UIStoryboardSegue {
     window?.insertSubview(secondVCView, aboveSubview: firstVCView)
 
     // fade
-    UIView.animate(withDuration: 0.4, animations: { () -> Void in
+    UIView.animate(withDuration: 0.8, animations: { () -> Void in
 
       firstVCView.alpha = 0.0
       secondVCView.alpha = 1.0

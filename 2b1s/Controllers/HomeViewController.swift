@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
   var currentEvent: Event! {
     didSet {
       titleLabel.text = currentEvent.name
-      imageView.image = UIImage(named: currentEvent.photoName)
+      imageView.image = currentEvent.image ?? nil
       RatingsSlider.value = Float(currentEvent.rating)
       ratingsLabel.text = String(RatingsSlider.value.rounded())
     }

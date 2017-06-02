@@ -24,7 +24,7 @@ class ItineraryDetailsViewController: UIViewController {
     super.viewDidLoad()
 
     titleLabel.text = event.name
-    imageView.image = UIImage(named: event.photoName)
+    imageView.image = event.image ?? nil
     RatingsSlider.value = Float(event.rating)
     ratingsLabel.text = String(RatingsSlider.value.rounded())
 

@@ -74,6 +74,10 @@ extension LoadViewController {
 
     animationView.addSubview(bubbleView)
     bubbleBehavior.addBubble(bubbleView)
+
+    //    bubbleBehavior.action = {
+    //      print("\(NSStringFromCGAffineTransform(bubbleView.transform)) \(NSStringFromCGPoint(bubbleView.center))")
+    //    }
   }
 }
 
