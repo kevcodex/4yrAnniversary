@@ -4,7 +4,7 @@
 //
 //  Created by Kirby on 5/29/17.
 //  Copyright © 2017 Kirby. All rights reserved.
-//
+// My notes: App took about 1.5 days with half a day to do the powerpoint
 
 import UIKit
 import CoreData

@@ -56,16 +56,17 @@ extension ItineraryViewController: UITableViewDataSource, UITableViewDelegate {
 
     let event = rootController.eventFetchedResultsController.object(at: indexPath)
 
-//    if event.time < 1_496_617_200 || indexPath.row == 0 {
-          if event.time < Date().timeIntervalSince1970 || indexPath.row == 0 {
+    if event.time > 1_496_617_200 {
+      //          if event.time > Date().timeIntervalSince1970  {
 
-      cell.event = event
-      cell.titleLabel.text = event.name
-      cell.sampleImage.image = event.image ?? nil
-    } else {
       cell.titleLabel.text = "???????"
       cell.sampleImage.image = UIImage.fontAwesomeIcon(name: .questionCircle, textColor: .gray, size: cell.sampleImage.bounds.size)
       cell.event = nil
+
+    } else {
+      cell.event = event
+      cell.titleLabel.text = event.name
+      cell.sampleImage.image = event.image ?? nil
     }
 
     let eventDate = Date(timeIntervalSince1970: event.time)

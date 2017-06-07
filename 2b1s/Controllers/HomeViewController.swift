@@ -52,17 +52,22 @@ class HomeViewController: UIViewController {
 
     let allEvents = rootController.eventFetchedResultsController.fetchedObjects
 
-    let filteredEvents = allEvents?.filter { $0.time > Date().timeIntervalSince1970 }
+    //    let upcomingEvents = allEvents?.filter { $0.time > Date().timeIntervalSince1970 }
 
-    if let currentEvent = filteredEvents?.first {
+    let upcomingEvents = allEvents?.filter { $0.time > 1_496_617_200 }
+    let currentEvent = allEvents?.filter { $0.time <= 1_496_617_200 }.last
+
+    if let currentEvent = currentEvent {
 
       self.currentEvent = currentEvent
     }
 
-    if filteredEvents!.count > 1 {
-      if let nextEvent = filteredEvents?[1] {
+    if upcomingEvents!.count > 0 {
+      if let nextEvent = upcomingEvents?[0] {
         let eventDate = Date(timeIntervalSince1970: nextEvent.time)
-        let timeUntil = eventDate.timeIntervalSinceNow
+        //        let timeUntil = eventDate.timeIntervalSinceNow
+
+        let timeUntil = eventDate.timeIntervalSince(Date.init(timeIntervalSince1970: 1_496_617_200))
 
         timeCounter = TimeCounter(eventTime: timeUntil)
         timeCounter.start()
@@ -97,7 +102,9 @@ extension HomeViewController {
 
   func updateTimeUI(timer: Timer) {
 
-    let currentTimeLeft = timeCounter.currentTimeLeft
+    guard let currentTimeLeft = timeCounter?.currentTimeLeft else {
+      return
+    }
 
     timeTillNextLabel.text = String(timeInterval: currentTimeLeft)
 
