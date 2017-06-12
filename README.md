@@ -12,3 +12,4 @@ A simple app I made for my 4 year anniversary gift for my girlfriend. It was cod
 * Other
 
 Feel free to tinker or use the code. :)
+![alt text](https://github.com/kirby10023/4yrAnniversary/blob/master/Intro.gif "Intro - UIDyanmics")
